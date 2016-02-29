@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+	<meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.4.9/angular-route.min.js"></script>
+	<link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="app.js"></script>
+		<script src="controller.js"></script>
+		<script src="constant.js"></script>
+		<link rel="stylesheet" type="text/css" href="text.css">
+	</head>
+	<body ng-controller="myCtrl as vm">
+	
+		<nav class="navbar">
+			<div class="container-fluid">
+				
+				<ul class="nav navbar-nav">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#product">Products</a></li>
+					<li><a href="#about">About Us</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+      				<li>{{vm.appName}}</li><br>
+      				<li>{{vm.appVersion}}</li>
+   				</ul>
+				</div>
+				<div ng-view></div>
+			
+		</nav>
+
+		<div id="footer">
+  		<div class="container">
+    		<p class="text-muted">Anagh Technologies 2 Lakeview Piscataway, NJ <a href="http://www.anaghtech.com/"><b>Anagh Tech</b></a></p>
+  		
+		
+
+		<ul class="nav pull-right scroll-top">
+  		<li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+		</ul>
+		</div>
+		</div>
+	</body>
+</html>

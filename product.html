@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="text.css">
+</head>
+<body>
+	<div ng-controller="myCtrl as vm">
+<div class="form-group">
+<label for="search">Search:</label>		
+<input type="text"  id="search" ng-model="txtSearch">
+
+<div id="table-responsive">
+<table class="table table-bordered">
+<thead>
+<tr>
+	<th><button class="btn btn-mini btn-link" ng-click="sort('pcode')"><i class="icon-sort"></i>Product_code</button></th>
+	<th><button class="btn btn-mini btn-link" ng-click="sort('pname')"><i class="icon-sort"></i>Product_name</button></th>
+	<th><button class="btn btn-mini btn-link" ng-click="sort('price')"><i class="icon-sort"></i>Price</button></th>
+	<th>Image</th>
+</tr>
+
+</thead>
+<tbody>
+		<tr ng-repeat="eobj in vm.prod | filter:txtSearch | orderBy:orderProp:direction">
+			<td>{{eobj.pcode}}</td>
+			<td>{{eobj.pname}}</td>
+			<td>{{eobj.price}}</td>
+			<td><img src="{{eobj.image_url}}" height="200" width="300"/></td>
+		</tr>
+
+</tbody>
+
+</table>
+</div>
+</div>
+</body>
+</html>

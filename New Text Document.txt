@@ -1,0 +1,55 @@
+=========================================
+	What is a service?
+=========================================
+Service are JS functions and are responsible to do a specific task only. Controllers, filters called
+them on requirement basis. They are injected using dependency injection mechanism of AngularJS.
+There are two types of services
+1. Angular services, that are inbuilt , for example: $http, $route, $window
+2. Custom Services, created by user .
+
+=====================================================
+What is the difference between controller and service?
+=====================================================
+Controllers are responsible to initialize the view, interaction between view/scope and services. Main concern is with view and make it 
+work.
+Services provides business services that is not dependent on view or controller. Its concern is to provide services, regardless of controller.
+
+==============================================================
+Explain difference between provider,factory and service method.
+===============================================================
+Factory method:
+In factory when you create an object,add properties to it, then return that same object. 
+When you pass this service into your controller, those properties on the object will now be 
+available in that controller through your factory.
+
+app.factory('myFactory' , function(){
+var_artist ='';
+service.getArtist = function(){
+return _artist;
+}
+
+Service method:
+Using service method, it's instantiated with 'new' keyword. All properties added by 'this'.
+When you pass the service into your controller, those properties on ‘this’ will now be 
+available on that controller through your service.
+
+app.service('myService' , function(){
+var _artist='Nelly';
+this.getArtist -= function(){
+return _artist;
+}
+
+Provider method:
+The biggest thing to remeber with provider is that they are only service that you can pass into app.config portion of your application.
+When creating a service with Provider, the only properties/methods that will be available in your controller are those properties/methods which are returned from the $get() function. 
+
+==================================================================
+Explain a way to define constants in angular?
+====================================================================
+A constant can be injected everywhere. A value of constant should never be changed.
+
+angular.module('app' , []);
+app.constant('MOVIE_TITLE', 'Matrix');
+.controller('MyController' , function (MOVIE_TITLE){
+expect(MOVIE_TITLE).toEqual('The Matrix');
+});
